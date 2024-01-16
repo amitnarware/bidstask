@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const  SECRET_KEY  = "amit"; // Make sure to replace this with your actual secret key
+const  SECRET_KEY  = "1324"; 
 
 function authenticateUser(req, res, next) {
   const token = req.header("Authorization");

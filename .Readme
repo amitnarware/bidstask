@@ -1,0 +1,60 @@
+ **README.md**
+
+**Introduction**
+
+This repository contains a Node.js module that provides a simple way to manage file uploads and downloads. The module is designed to be easy to use and integrate with any Node.js application.
+
+**Installation**
+
+To install the module, simply run the following command in your terminal:
+
+```
+npm install node-file-manager
+```
+
+**Usage**
+
+Once the module is installed, you can import it into your Node.js application and start using it. The following code snippet shows how to import the module and use it to upload a file:
+
+```javascript
+const fileManager = require('node-file-manager');
+
+// Create a new file manager instance
+const manager = new fileManager();
+
+// Upload a file
+manager.uploadFile('./path/to/file', 'file-name.txt', (err, data) => {
+  if (err) {
+    // Handle error
+  } else {
+    // File uploaded successfully
+  }
+});
+```
+
+The `uploadFile()` method takes three parameters:
+
+* `filePath`: The path to the file that you want to upload.
+* `fileName`: The name of the file that you want to save the uploaded file as.
+* `callback`: A callback function that will be called when the file upload is complete. The callback function will receive two parameters: an error object and a data object. The error object will be null if the file upload was successful, otherwise it will contain an error message. The data object will contain the file metadata.
+
+**Downloading Files**
+
+The `fileManager` module also provides a method for downloading files. The following code snippet shows how to use the `downloadFile()` method to download a file:
+
+```javascript
+// Download a file
+manager.downloadFile('file-name.txt', './path/to/save/file', (err, data) => {
+  if (err) {
+    // Handle error
+  } else {
+    // File downloaded successfully
+  }
+});
+```
+
+The `downloadFile()` method takes three parameters:
+
+* `fileName`: The name of the file that you want to download.
+* `filePath`: The path to the directory where you want to save the downloaded file.
+* `callback`: A callback function that will be called when the file download is complete. The callback function will receive two parameters: an error object and a data object.
